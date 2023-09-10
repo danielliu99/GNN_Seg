@@ -1,0 +1,11 @@
+## preprocess 
+python -m scripts.preprocess_dataset -d ../data/raw/train_split/ -n 20000 -k 0 -b 0.5 -o ../data/processed/train_split 
+
+## train 
+python -m scripts.train_gnn -d ../data/processed/train_split/ --valid_dir ../data/processed/test_split/ -o ./logs -r "model0901" -k 1 -m GSpool
+
+## predict 
+python -m scripts.generate_gnn_predictions -d /data/processed/test_split/ -o /data/out/0909 -w logs/model0904_f1_r -f logits 
+
+## post-process 
+python -m scripts.logits_to_preds -r ../data/out/0904 -t ../data/out/0904_pred

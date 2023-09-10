@@ -1,0 +1,7 @@
+pickle-mixin
+nibabel
+SimpleITK
+imageio
+networkx
+scikit-image==0.18.3
+# dgl==1.0.1+cu116 -f https://data.dgl.ai/wheels/cu116/repo.html
